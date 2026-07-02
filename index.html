@@ -481,9 +481,8 @@
       </div>
 
       <div class="card reveal">
-        <form class="form" id="bookForm" name="zayavka" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-          <input type="hidden" name="form-name" value="zayavka" />
-          <p class="form__hp" aria-hidden="true"><label>Не заполняйте: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <form class="form" id="bookForm" novalidate>
+          <p class="form__hp" aria-hidden="true"><label>Не заполняйте: <input name="_honey" tabindex="-1" autocomplete="off" /></label></p>
           <div class="form__row">
             <label for="name">Имя</label>
             <input type="text" id="name" name="name" autocomplete="name" required />
@@ -537,6 +536,13 @@
         </svg>
         Канал в&nbsp;Max
       </a>
+      <div class="footer__credit">
+        <span>Сайт создан командой</span>
+        <a href="http://geo-style.ru/" target="_blank" rel="noopener" class="footer__credit-link">
+          Geo Style
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
     </footer>
   </section>
 

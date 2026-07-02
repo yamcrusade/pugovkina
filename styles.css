@@ -510,7 +510,6 @@ a { color: inherit; text-decoration: none; }
   background:
     radial-gradient(100% 80% at 82% 12%, rgba(58,26,38,0.3), transparent 60%),
     var(--wine-900);
-  padding-bottom: 5rem;
 }
 .contact__media {
   position: relative;
@@ -644,12 +643,15 @@ a { color: inherit; text-decoration: none; }
 
 .footer {
   grid-column: 1 / -1;
-  position: absolute;
-  bottom: 1.6rem; left: 0; right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.1rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: 2rem clamp(20px, 4vw, 64px) 0;
+  border-top: 1px solid rgba(198, 162, 92, 0.18);
+  background: var(--wine-950);
+  padding-bottom: 1.8rem;
 }
 .footer__nav {
   display: flex; justify-content: center; align-items: center; gap: 1.4rem;
@@ -673,6 +675,37 @@ a { color: inherit; text-decoration: none; }
 }
 .footer__max:hover { color: var(--gold); border-color: var(--gold); background: rgba(198,162,92,0.08); }
 .footer__max svg { display: block; }
+
+.footer__credit {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(198, 162, 92, 0.1);
+  font-size: 0.8rem;
+  color: rgba(243, 236, 220, 0.45);
+}
+.footer__credit-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(198, 162, 92, 0.3);
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: color 0.25s, border-color 0.25s, background 0.25s, transform 0.25s var(--ease);
+}
+.footer__credit-link:hover {
+  color: var(--wine-950);
+  background: var(--gold-soft);
+  border-color: var(--gold-soft);
+  transform: translateY(-1px);
+}
+.footer__credit-link svg { transition: transform 0.25s var(--ease); }
+.footer__credit-link:hover svg { transform: translateX(2px); }
 
 /* ============================================================
    УСЛУГИ + ЦЕНЫ

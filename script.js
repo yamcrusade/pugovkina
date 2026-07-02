@@ -128,12 +128,19 @@
 
       try {
         if (!isLocal) {
-          // Реальная отправка в Netlify Forms
-          const data = new URLSearchParams(new FormData(form));
-          const res = await fetch("/", {
+          // Отправка заявки на почту клиента через FormSubmit
+          const FORM_ENDPOINT = "https://formsubmit.co/ajax/olya.g.84@mail.ru";
+          const res = await fetch(FORM_ENDPOINT, {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: data.toString(),
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              _subject: "Заявка с сайта — Пуговкина Ателье",
+              _template: "table",
+              _honey: form.elements["_honey"].value,
+              "Имя": form.elements["name"].value.trim(),
+              "Телефон": form.elements["phone"].value,
+              "Что нужно сделать": form.elements["task"].value.trim() || "—",
+            }),
           });
           if (!res.ok) throw new Error("HTTP " + res.status);
         }
